@@ -2,7 +2,7 @@ DEVICE_PATH := device/google/crosshatch
 BOARD_VENDOR := google
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-01-01
+VENDOR_SECURITY_PATCH := 2020-02-05
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml

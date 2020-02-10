@@ -107,6 +107,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
+vendor/lib/libtinycompress.so
 vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -114,6 +115,7 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
+vendor/lib64/libtinycompress.so
 vendor/lib64/soundfx/libaudiopreprocessing.so
 
 # Audio-ACDB
@@ -144,7 +146,6 @@ vendor/etc/acdbdata/OEM/sdm845-tavil-snd-card/Headset_cal.acdb
 vendor/etc/acdbdata/OEM/sdm845-tavil-snd-card/Speaker_cal.acdb
 
 # Audio-Hardware
-vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.sdm845.so
 vendor/lib/hw/audio.r_submix.default.so
@@ -153,7 +154,6 @@ vendor/lib/soundfx/libqcompostprocbundle.so
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libvolumelistener.so
-vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.sdm845.so
 vendor/lib64/hw/audio.r_submix.default.so
@@ -172,11 +172,13 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth.a2dp@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/libbluetooth_audio_session.so
 vendor/lib/libbtnv.so
 vendor/lib64/hw/android.hardware.bluetooth.a2dp@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
@@ -190,13 +192,16 @@ product/lib64/libaptX_encoder.so
 vendor/bin/cdsprpcd
 vendor/lib/libcdsprpc.so
 vendor/lib/libcdsp_default_listener.so
+vendor/lib/libsysmon_cdsp_skel.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libcdsp_default_listener.so
+vendor/lib64/libsysmon_cdsp_skel.so
 
 # CNE
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
 -priv-app/CNEService/CNEService.apk
+product/etc/cne/andsfCne.xml
 vendor/bin/cnd
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
@@ -249,7 +254,6 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
 # Camera
-vendor/lib/libbase64.so
 vendor/lib/libcameradepthcalibrator.so
 vendor/lib/libsnsapi.so
 vendor/lib/libsnsdiaglog.so
@@ -316,7 +320,6 @@ vendor/lib64/camera/fdconfigvideo.bin
 vendor/lib64/camera/fdconfigvideolite.bin
 vendor/lib64/hw/camera.sdm845.so
 vendor/lib64/hw/com.qti.chi.override.so
-vendor/lib64/libbase64.so
 vendor/lib64/libcameradepthcalibrator.so
 vendor/lib64/libcamxfdalgov7.so
 vendor/lib64/libcamxfdengine.so
@@ -333,7 +336,6 @@ vendor/lib64/libsns_device_mode_stub.so
 vendor/lib64/libsns_fastRPC_util.so
 vendor/lib64/libsns_low_lat_stream_stub.so
 vendor/lib64/libswvdec.so
-vendor/lib64/libsysmon_cdsp_skel.so
 vendor/lib64/libvd6281.so
 vendor/lib64/lib_camera_sensors.so
 
@@ -348,6 +350,7 @@ vendor/bin/hvdcp_opti
 
 # DRM
 vendor/bin/qseecomd
+vendor/lib/libbase64.so
 vendor/lib/libcpion.so
 vendor/lib/libcppf.so
 vendor/lib/libdrmfs.so
@@ -364,10 +367,12 @@ vendor/lib/libsdedrm.so
 vendor/lib/libsecureui.so
 vendor/lib/libSecureUILib.so
 vendor/lib/libsecureui_svcsock.so
+vendor/lib/libsi.so
 vendor/lib/libspl.so
 vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libtzdrmgenprov.so
+vendor/lib64/libbase64.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
@@ -383,10 +388,31 @@ vendor/lib64/libsdedrm.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libsi.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
+
+# DRM-HDCP
+vendor/bin/hdcp1prov
+vendor/bin/hdcp2p2prov
+vendor/lib/libhdcp1prov.so
+vendor/lib/libhdcp2p2prov.so
+vendor/lib/libhdcpsrm.so
+vendor/lib/libmm-hdcpmgr.so
+vendor/lib64/libhdcp1prov.so
+vendor/lib64/libhdcp2p2prov.so
+vendor/lib64/libhdcpsrm.so
+vendor/lib64/libmm-hdcpmgr.so
+
+# DRM-Qteeconnector
+vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib/libQTEEConnector_vendor.so
+vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib64/libQTEEConnector_vendor.so
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # DRM-Widevine
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine
@@ -479,7 +505,6 @@ vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.fpc
-vendor/bin/init.fingerprint.sh
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.fpc.rc
 vendor/firmware/fpctzappfingerprint.b00
 vendor/firmware/fpctzappfingerprint.b01
@@ -709,10 +734,6 @@ vendor/etc/init/vendor.google.wireless_charger@1.0-service.rc
 vendor/etc/permissions/com.google.android.camera.experimental2018.xml
 vendor/etc/permissions/com.google.hardware.camera.easel_2018.xml
 vendor/framework/com.google.android.camera.experimental2018.jar
-vendor/framework/oat/arm/com.google.android.camera.experimental2018.odex
-vendor/framework/oat/arm/com.google.android.camera.experimental2018.vdex
-vendor/framework/oat/arm64/com.google.android.camera.experimental2018.odex
-vendor/framework/oat/arm64/com.google.android.camera.experimental2018.vdex
 vendor/lib/hardware.google.light@1.0.so
 vendor/lib/libgooglecamerahal.so
 vendor/lib/libgooglecamerahalutils.so
@@ -796,10 +817,6 @@ vendor/lib64/libtinyxml2_1.so
 -product/priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
 -product/priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
 
-# IOP
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-
 # IPA-Firmware
 vendor/firmware/ipa_fws.b00
 vendor/firmware/ipa_fws.b01
@@ -807,25 +824,6 @@ vendor/firmware/ipa_fws.b02
 vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.mdt
-
-# Kernel-Modules
-vendor/lib/modules/ftm5.ko
-vendor/lib/modules/heatmap.ko
-vendor/lib/modules/modules.alias
-vendor/lib/modules/modules.dep
-vendor/lib/modules/pinctrl-wcd.ko
-vendor/lib/modules/sec_touch.ko
-vendor/lib/modules/snd-soc-cs35l36.ko
-vendor/lib/modules/snd-soc-sdm845-max98927.ko
-vendor/lib/modules/snd-soc-sdm845.ko
-vendor/lib/modules/snd-soc-wcd-spi.ko
-vendor/lib/modules/snd-soc-wcd934x.ko
-vendor/lib/modules/snd-soc-wcd9xxx.ko
-vendor/lib/modules/videobuf2-memops.ko
-vendor/lib/modules/videobuf2-vmalloc.ko
-vendor/lib/modules/wcd-core.ko
-vendor/lib/modules/wcd-dsp-glink.ko
-vendor/lib/modules/wlan.ko
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
@@ -945,12 +943,18 @@ vendor/etc/init/android.hardware.neuralnetworks@1.2-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
 
 # Perf
+lib/vendor.qti.hardware.perf@1.0.so
+lib64/vendor.qti.hardware.perf@1.0.so
 vendor/bin/msm_irqbalance
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/lib/libqti-utils.so
 vendor/lib/vendor.qti.hardware.perf@1.0.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/vendor.qti.hardware.perf@1.0.so
+
+# Perf-IOP
+vendor/lib/vendor.qti.hardware.iop@1.0.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
 
 # Peripheral
 vendor/bin/pm-proxy
@@ -969,13 +973,11 @@ lib64/vendor.display.color@1.2.so
 lib64/vendor.display.postproc@1.0.so
 vendor/bin/mm-pp-dpps
 vendor/lib/libdisp-aba.so
-vendor/lib/libmm-hdcpmgr.so
 vendor/lib/vendor.display.color@1.0.so
 vendor/lib/vendor.display.color@1.1.so
 vendor/lib/vendor.display.color@1.2.so
 vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib64/libdisp-aba.so
-vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
@@ -1024,14 +1026,6 @@ vendor/lib64/libqmi_modem_svc.so
 # Qdutils
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-
-# Qteeconnector
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib/libQTEEConnector_vendor.so
-vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/libQTEEConnector_vendor.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
@@ -1321,14 +1315,6 @@ vendor/lib64/hw/vibrator.default.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 
-# WFD
-vendor/lib/libhdcp1prov.so
-vendor/lib/libhdcp2p2prov.so
-vendor/lib/libhdcpsrm.so
-vendor/lib64/libhdcp1prov.so
-vendor/lib64/libhdcp2p2prov.so
-vendor/lib64/libhdcpsrm.so
-
 # WiFi
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
@@ -1347,8 +1333,6 @@ vendor/etc/init.insmod.cfg
 vendor/app/embms/oem/vzw/config_params.xml
 vendor/app/embms/oem/vzw/provisioning_params.xml
 vendor/app/embms/oem/vzw/verizon_config_params.txt
-vendor/app/TimeService/oat/arm64/TimeService.odex
-vendor/app/TimeService/oat/arm64/TimeService.vdex
 vendor/bin/athdiag
 vendor/bin/bc
 vendor/bin/ccid_daemon
@@ -1365,8 +1349,6 @@ vendor/bin/easelmanagerd
 vendor/bin/fsync
 vendor/bin/ftmdaemon
 vendor/bin/getconf
-vendor/bin/hdcp1prov
-vendor/bin/hdcp2p2prov
 vendor/bin/hw/android.hardware.atrace@1.0-service.pixel
 vendor/bin/hw/android.hardware.health.storage@1.0-service
 vendor/bin/hw/android.hardware.power.stats@1.0-service.pixel
@@ -1452,7 +1434,6 @@ vendor/lib/libOpenCL-pixel.so
 vendor/lib/libopus.so
 vendor/lib/libqcbor.so
 vendor/lib/libqcodec2.so
-vendor/lib/libsi.so
 vendor/lib/libspiris.so
 vendor/lib/libstagefright_amrnb_common.so
 vendor/lib/libstagefright_bufferpool@2.0.1.so
@@ -1480,7 +1461,6 @@ vendor/lib/libstagefright_soft_rawdec.so
 vendor/lib/libstagefright_soft_vorbisdec.so
 vendor/lib/libstagefright_soft_vpxdec.so
 vendor/lib/libstagefright_soft_vpxenc.so
-vendor/lib/libsysmon_cdsp_skel.so
 vendor/lib/libvorbisidec.so
 vendor/lib/libvpx.so
 vendor/lib/libvsc.so
@@ -1520,7 +1500,6 @@ vendor/lib64/libpixelstats.so
 vendor/lib64/libpower_anomaly_data.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libqcodec2.so
-vendor/lib64/libsi.so
 vendor/lib64/libspiris.so
 vendor/lib64/libstagefright_bufferpool@2.0.1.so
 vendor/lib64/libvsc.so

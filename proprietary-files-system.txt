@@ -39,6 +39,7 @@ lib/vendor.display.color@1.1.so
 lib/vendor.display.color@1.2.so
 lib/vendor.display.postproc@1.0.so
 lib/vendor.qti.hardware.data.latency@1.0.so
+lib/vendor.qti.hardware.perf@1.0.so
 lib/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
 lib/vendor.qti.hardware.scve.objecttracker@1.0.so
 lib/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
@@ -61,6 +62,7 @@ lib64/vendor.display.color@1.1.so
 lib64/vendor.display.color@1.2.so
 lib64/vendor.display.postproc@1.0.so
 lib64/vendor.qti.hardware.data.latency@1.0.so
+lib64/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
 lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
@@ -69,6 +71,7 @@ lib64/vendor.qti.hardware.soter@1.0.so
 lib64/vendor.qti.hardware.vpp@1.1.so
 lib64/vendor.qti.ims.callinfo@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
+product/etc/cne/andsfCne.xml
 product/etc/firmware/music_detector.descriptor
 product/etc/firmware/music_detector.sound_model
 product/etc/sysconfig/qti_whitelist.xml
