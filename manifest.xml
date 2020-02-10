@@ -225,6 +225,16 @@
         <fqname>@4.0::IKeymasterDevice/strongbox</fqname>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.light</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>ILight</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::ILight/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.media.c2</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -253,7 +263,9 @@
         <name>android.hardware.neuralnetworks</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IDevice/paintbox</fqname>
-        <fqname>@1.1::IDevice/default</fqname>
+        <fqname>@1.2::IDevice/qti-default</fqname>
+        <fqname>@1.2::IDevice/qti-dsp</fqname>
+        <fqname>@1.2::IDevice/qti-gpu</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.nfc</name>
@@ -440,6 +452,16 @@
             <instance>cnd</instance>
         </interface>
         <fqname>@2.1::IServer/cnd</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>hardware.google.light</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILight</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ILight/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.display.config</name>

@@ -144,14 +144,20 @@ vendor/etc/acdbdata/OEM/sdm845-tavil-snd-card/Headset_cal.acdb
 vendor/etc/acdbdata/OEM/sdm845-tavil-snd-card/Speaker_cal.acdb
 
 # Audio-Hardware
+vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.sdm845.so
+vendor/lib/hw/audio.r_submix.default.so
+vendor/lib/hw/audio.usb.default.so
 vendor/lib/soundfx/libqcompostprocbundle.so
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libvolumelistener.so
+vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.sdm845.so
+vendor/lib64/hw/audio.r_submix.default.so
+vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/soundfx/libqcompostprocbundle.so
 vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
@@ -166,13 +172,11 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth.a2dp@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/libbluetooth_audio_session.so
 vendor/lib/libbtnv.so
 vendor/lib64/hw/android.hardware.bluetooth.a2dp@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
@@ -694,9 +698,11 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # Google
+vendor/bin/hw/hardware.google.light@1.0-service
 vendor/bin/hw/vendor.google.radioext@1.0-service
 vendor/bin/hw/vendor.google.wifi_ext@1.0-service-vendor
 vendor/bin/hw/vendor.google.wireless_charger@1.0-service-vendor
+vendor/etc/init/hardware.google.light@1.0-service.rc
 vendor/etc/init/vendor.google.radioext@1.0-service.rc
 vendor/etc/init/vendor.google.wifi_ext@1.0-service.rc
 vendor/etc/init/vendor.google.wireless_charger@1.0-service.rc
@@ -708,7 +714,6 @@ vendor/framework/oat/arm/com.google.android.camera.experimental2018.vdex
 vendor/framework/oat/arm64/com.google.android.camera.experimental2018.odex
 vendor/framework/oat/arm64/com.google.android.camera.experimental2018.vdex
 vendor/lib/hardware.google.light@1.0.so
-vendor/lib/hw/hardware.google.light@1.0-impl.so
 vendor/lib/libgooglecamerahal.so
 vendor/lib/libgooglecamerahalutils.so
 vendor/lib/libgoogle_camera_hal_tests.so
@@ -717,7 +722,6 @@ vendor/lib/vendor.google.radioext@1.0.so
 vendor/lib/vendor.google.radioext@1.1.so
 vendor/lib/vendor.google_paintbox@1.0.so
 vendor/lib64/hardware.google.light@1.0.so
-vendor/lib64/hw/hardware.google.light@1.0-impl.so
 vendor/lib64/libgooglecamerahal.so
 vendor/lib64/libgooglecamerahalutils.so
 vendor/lib64/libgoogle_camera_hal_tests.so
@@ -728,6 +732,8 @@ vendor/lib64/vendor.google.wifi_ext@1.0.so
 vendor/lib64/vendor.google.wireless_charger@1.0.so
 vendor/lib64/vendor.google_paintbox@1.0.so
 vendor/lib64/vendor.qti.googleext.imsext@1.0.so
+vendor/odm/etc/permissions/sku_G013B/com.google.hardware.pixel.japan.xml
+vendor/odm/etc/permissions/sku_G013D/com.google.hardware.pixel.japan.xml
 vendor/overlay/SystemUIGoogle__auto_generated_rro_vendor.apk
 vendor/radio/qcril_database/upgrade/3_version_google_feature.sql
 vendor/radio/qcril_database/upgrade/4_version_google_feature.sql
@@ -934,8 +940,8 @@ vendor/overlay/NfcNci__auto_generated_rro_vendor.apk
 
 # Neural-networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.0-service-paintbox
-vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti
-vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
+vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
+vendor/etc/init/android.hardware.neuralnetworks@1.2-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
 
 # Perf
@@ -1110,6 +1116,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/radio/qcril_database/qcril.db
 vendor/radio/qcril_database/upgrade/0_initial.sql
+vendor/radio/qcril_database/upgrade/10_remove_germany_hard_ecc_110.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
 vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
@@ -1282,13 +1289,16 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
+vendor/bin/hw/android.hardware.thermal@2.0-service.pixel
 vendor/bin/thermal-engine
+vendor/etc/init/android.hardware.thermal@2.0-service.pixel.rc
 vendor/etc/thermal-engine-crosshatch-novr-evt.conf
 vendor/etc/thermal-engine-crosshatch-novr-prod.conf
 vendor/etc/thermal-engine-crosshatch-vr-evt.conf
 vendor/etc/thermal-engine-crosshatch-vr-prod.conf
 vendor/etc/thermal_info_config.json
 vendor/etc/thermal_info_config_evt.json
+vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.pixel.xml
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 
@@ -1445,6 +1455,7 @@ vendor/lib/libqcodec2.so
 vendor/lib/libsi.so
 vendor/lib/libspiris.so
 vendor/lib/libstagefright_amrnb_common.so
+vendor/lib/libstagefright_bufferpool@2.0.1.so
 vendor/lib/libstagefright_enc_common.so
 vendor/lib/libstagefright_flacdec.so
 vendor/lib/libstagefright_softomx.so
@@ -1473,6 +1484,7 @@ vendor/lib/libsysmon_cdsp_skel.so
 vendor/lib/libvorbisidec.so
 vendor/lib/libvpx.so
 vendor/lib/libvsc.so
+vendor/lib/libwifi-hal-ctrl.so
 vendor/lib/lib_aion_buffer.so
 vendor/lib/soundfx/libmalistener.so
 vendor/lib/soundfx/libqcomvoiceprocessingdescriptors.so
@@ -1510,7 +1522,9 @@ vendor/lib64/libqcbor.so
 vendor/lib64/libqcodec2.so
 vendor/lib64/libsi.so
 vendor/lib64/libspiris.so
+vendor/lib64/libstagefright_bufferpool@2.0.1.so
 vendor/lib64/libvsc.so
+vendor/lib64/libwifi-hal-ctrl.so
 vendor/lib64/libwlcproto.so
 vendor/lib64/lib_aion_buffer.so
 vendor/lib64/nos_app_avb.so
@@ -1520,4 +1534,8 @@ vendor/lib64/pixelpowerstats_provider_aidl_interface-cpp.so
 vendor/lib64/rfsa/adsp/libdsp_streamer_add_constant.so
 vendor/lib64/soundfx/libmalistener.so
 vendor/lib64/soundfx/libqcomvoiceprocessingdescriptors.so
+vendor/lib64/unnhal-acc-adreno.so
+vendor/lib64/unnhal-acc-common.so
+vendor/lib64/unnhal-acc-hvx.so
+vendor/lib64/vendor-pixelatoms-cpp.so
 vendor/lib64/vendor.qti.hardware.automotive.vehicle@1.0.so
